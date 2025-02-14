@@ -26,6 +26,13 @@ print(choices) #prints list for user
 player_score= 0  # sets score to zero
 computer_score=0 # sets score to zero 
 
+#Asks if player wants to play another round 
+play_again = input("Play again? Enter 'y' for yes or 'n' for no. ") 
+# if input=='y': 
+#   # print (player_choice)
+# if input=='n':
+#    print( "Alright")
+
 
 while True:  # while statment 
     computer_choice= throw[random.randint(0,2)] # uses random function to chose a value from 
@@ -34,6 +41,7 @@ while True:  # while statment
     print ( score_track) #prints score_track for player to know score 
     print("Please select a input") # Asks user to chose a imput
     player_choice= input("'r'=Rock ,'p'= Paper,'s'=Scissors:") .lower() # gives user options and takes input 
+
 
 # Result options if player chosses Rock as input 
     if player_choice =='r':
@@ -47,6 +55,7 @@ while True:  # while statment
     else:
       print("Rock crushes scissors!You win this round!!!")
       player_score+= 1   # Adds points to players score if they win 
+      print (play_again)
 
 #Result options if player chosses Paper as input 
     if player_choice=='p':
@@ -60,7 +69,7 @@ while True:  # while statment
     else:
          print("Paper covers rock! You win !!!")
          player_score+=1  # Adds point to users score if they win 
-          
+         print (play_again)
 
 #Results if player chosses Scissors as input 
     if  player_choice =='s':
@@ -74,14 +83,19 @@ while True:  # while statment
     else:
        print("Scissors cut Paper!You win !!!")
        player_score=+1 # adds a point to users score if they win 
+       print (play_again)
        break 
-#Asks if player wants to play another round 
+    
+
+#Asks if player wants to play another round  (2nd time appearing)
 play_again = input("Play again? Enter 'y' for yes or 'n' for no. ") 
 if input=='y': 
   print (player_choice)
 if input=='n':
    print( "Alright")
 
+
+# Print the final score of the game 
 print ( score_track) # prints the final score 
 if computer_score!=player_score :
         print ("You guys tied no winner !")
@@ -90,6 +104,9 @@ elif computer_score < player_score :
 else: 
    computer_score > player_score 
    print (" Computer won the game ")
+
+
+
 
 
 # Rate game 
