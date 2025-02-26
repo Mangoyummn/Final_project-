@@ -15,9 +15,13 @@ elif game=="n":
    print("Thats Okay see you next time! ")   # if user says no prints this 
    exit()# exit the game if no is chosen 
 
+print("------------------START-----------------------")
+
+
 print(" Lets Battle!!") # start
-throw= (" Rock- Paper -Scissors shoe ") # starts game 
+throw= (" Rock- Paper -Scissors shoe !!!") # starts game 
 print(throw)   # prints question 
+print("Options:")
 choices=["Rock",    # list 1  with choices 
          "Paper"
          ,"Scissors"]
@@ -36,8 +40,11 @@ while True:  # while statment
    
     computer_choice = random.choice(choices)
     score_track=f"Players score: {player_score} , Computer scorce:{ computer_score}" # keeps track of score between player and computer 
-    print ( score_track) #prints score_track for player to know score 
-    print("Please select a input") # Asks user to chose a imput
+    
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+
+    print("Please select a input...") # Asks user to chose a imput
     player_choice= input("'r'=Rock ,'p'= Paper,'s'=Scissors:") .lower() # gives user options and takes input 
 
 
@@ -58,14 +65,25 @@ while True:  # while statment
         print("It's a tie!")
         player_score += 1
         computer_score += 1
+        print("-------------------")
+        print ( score_track)
+
     elif (player_choice == "Rock" and computer_choice == "Scissors") or \
          (player_choice == "Paper" and computer_choice == "Rock") or \
          (player_choice == "Scissors" and computer_choice == "Paper"):
         print(f"You win! {player_choice} beats {computer_choice}")
-        player_score += 1
+        player_score+= 1
+        print("-------------------")
+        print ( score_track)
     else:
-        print(f"You lose! {computer_choice} beats {player_choice}")
-        computer_score += 1
+
+      (player_choice == "Scissors" and computer_choice == "Rock") or \
+      (player_choice == "Rock" and computer_choice == "Paper") or \
+      (player_choice == "Paper" and computer_choice == "Scissors")
+      print(f"You lose! {computer_choice} beats {player_choice}")
+    computer_score+= 1
+    print("-------------------")
+    print ( score_track) #prints score_track for player to know score 
 
     # Ask if player wants to play again
     play_again = input("Play again? Enter 'y' for yes or 'n' for no: ").lower()
@@ -94,7 +112,7 @@ if input=='n':
 
 # Print the final score of the game 
 print ( score_track) # prints the final score 
-if computer_score!=player_score :
+if computer_score==player_score :
         print ("You guys tied no winner !")
 elif computer_score < player_score :
    print (" Player has won the game ")
